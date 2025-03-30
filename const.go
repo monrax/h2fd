@@ -1,0 +1,26 @@
+package main
+
+const RESERVED_MASK byte = 0b01111111
+
+const (
+	DATA byte = iota
+	HEADERS
+	PRIORITY
+	RST_STREAM
+	SETTINGS
+	PUSH_PROMISE
+	PING
+	GOAWAY
+	WINDOW_UPDATE
+	CONTINUATION
+	ALTSVC
+	ORIGIN
+)
+
+const (
+	PRIORITY_FMASK    byte = 0x20
+	PADDED_FMASK      byte = 0x08
+	END_HEADERS_FMASK byte = 0x04
+	END_STREAM_FMASK  byte = 0x01
+	ACK_FMASK         byte = 0x01
+)
