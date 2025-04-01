@@ -2,14 +2,37 @@
 
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"encoding/hex"
+	"fmt"
+	"os"
+)
 
 func main() {
-        var input string
 	fmt.Print("Enter raw bytes: ")
-	fmt.Scanln(&input)
+	in := bufio.NewReader(os.Stdin)
 
-	x := []byte(input)
+	line, err := in.ReadBytes('\n')
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	x := make([]byte, 0)
+	for i := 0; i < len(line)-2; {
+		if (line[i] != 32) && (line[i] != 10) {
+			x, err = hex.AppendDecode(x, line[i:i+2])
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+			i += 2
+		} else {
+			i++
+		}
+	}
+
 	fmt.Printf("Raw bytes read: [% x]\n\n", x)
 
 	for i, f := range getFrames(x) {
