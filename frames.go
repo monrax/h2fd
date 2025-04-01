@@ -110,7 +110,16 @@ func (f *frame) asMap() map[string]interface{} {
 	m := make(map[string]interface{})
 	m["len"] = f.length()
 	m["type"] = f.stype()
-	m["flag"] = f.sflag()
+	joined := ""
+	flags := f.sflag()
+	for i, s := range flags {
+		if i == len(flags)-1 {
+			joined += s
+		} else {
+			joined += s + ", "
+		}
+	}
+	m["flag"] = joined
 	m["reserved"] = f.reserved
 	m["streamId"] = f.streamId()
 	m["data"] = string(f.data)

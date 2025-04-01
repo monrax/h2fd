@@ -2,20 +2,24 @@
 
 package main
 
-import "syscall/js"
+import (
+	"strconv"
+	"syscall/js"
+)
 
 func getFramesJs(this js.Value, args []js.Value) any {
-	in := make([]byte, 0)
+	in := make([]byte, 1024)
 	n := js.CopyBytesToGo(in, args[0])
 	if n <= 0 {
+		println("error: no bytes were read")
 		return js.Null()
 	}
 
-	frames := getFrames(in)
-	framesOut := make(map[int]any)
+	frames := getFrames(in[:n])
+	framesOut := make(map[string]any)
 
 	for i, f := range frames {
-		framesOut[i] = f.asMap()
+		framesOut[strconv.Itoa(i)] = f.asMap()
 	}
 
 	return js.ValueOf(framesOut)
