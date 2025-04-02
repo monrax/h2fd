@@ -1,6 +1,8 @@
 # h2fd - HTTP2 Frame Decoder
 
-Do you have a bunch of HTTP2 frame bytes? Are you looking for a way to decode them easily? I got you covered.
+Do you have a bunch of HTTP2 frame bytes? Are you looking for a way to decode them easily?
+
+I got you covered.
 
 ## What is this?
 
@@ -22,7 +24,7 @@ These three alternatives do not depend on each other. You can pick and use the o
 
 ### Requirements
 
-Go 1.24+
+- Go 1.24+
 
 ### Steps
 
