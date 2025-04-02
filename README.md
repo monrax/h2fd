@@ -12,11 +12,16 @@ I got you covered.
 
 ## How to use this?
 
-You can run this 3 different ways:
+You can use this app in 3 different ways
 
-- [CLI app](#cli-app) <-- local CLI
-- [Node app](#node-app) <-- local GUI
-- [Website](#website) <-- easiest
+Go here:
+
+- [Live website!](https://monrax.github.io/h2fd/) <-- easiest (no need to install anything)
+
+Or, you can run the app locally:
+
+- [CLI app](#cli-app) <-- CLI
+- [Node app](#node-app) <-- browser-based GUI
 
 These three alternatives do not depend on each other. You can pick and use the one you like the most.
 
@@ -101,7 +106,3 @@ node app.js
 ```
 
 Go to https://localhost:8000/ and use the app!
-
-## Website
-
-// TODO
