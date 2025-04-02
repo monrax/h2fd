@@ -2,6 +2,20 @@
 
 Do you have a bunch of HTTP2 frame bytes? Are you looking for a way to decode them easily? I got you covered.
 
+## What is this?
+
+[ hex byte array ] -->  [ this app ] --> [ http2 frame details ]
+
+## How to use this?
+
+You can run this 3 different ways:
+
+- [CLI app](#cli-app) (local)
+- [Node app](#node-app) (local)
+- [Website](#website)
+
+These three alternatives do not depend on each other. You can pick and use the one you like the most.
+
 ## CLI app
 
 ### Requirements
@@ -31,16 +45,16 @@ Enter your bytes
 See the frame details
 
 ```sh
-Raw bytes read: [00 00 04 00 00 00 01 02 03 be be ca fe]
+#Raw bytes read: [00 00 04 00 00 00 01 02 03 be be ca fe]
 
-Frame at index: 0
-Length: 4
-Type: DATA (0)
-Flag: 00000000 (0x0)
-        PADDED: false
-        END_STREAM: false
-R bit: 0b0, Stream ID: 66051 [00 01 02 03]
-Data: [be be ca fe]
+#Frame at index: 0
+#Length: 4
+#Type: DATA (0)
+#Flag: 00000000 (0x0)
+#        PADDED: false
+#        END_STREAM: false
+#R bit: 0b0, Stream ID: 66051 [00 01 02 03]
+#Data: [be be ca fe]
 ```
 
 ## Node app
@@ -77,3 +91,7 @@ node app.js
 ```
 
 Go to https://localhost:8000/ and use the app!
+
+## Website
+
+// TODO
