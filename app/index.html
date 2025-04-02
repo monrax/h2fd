@@ -18,12 +18,7 @@
         }
     </style>
     <script src="wasm_exec.js"></script>
-    <script>
-        const go = new Go();
-        WebAssembly.instantiateStreaming(fetch("main.wasm", {mode: "no-cors"}), go.importObject).then((result) => {
-            go.run(result.instance);
-        });
-    </script>
+    <script src="load.js"></script>
     <script src="decode.js"></script>
     <title>h2fd</title>
 </head>
