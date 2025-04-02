@@ -4,15 +4,17 @@ Do you have a bunch of HTTP2 frame bytes? Are you looking for a way to decode th
 
 ## What is this?
 
+```ascii
 [ hex byte array ] -->  [ this app ] --> [ http2 frame details ]
+```
 
 ## How to use this?
 
 You can run this 3 different ways:
 
-- [CLI app](#cli-app) (local)
-- [Node app](#node-app) (local)
-- [Website](#website)
+- [CLI app](#cli-app) <-- local CLI
+- [Node app](#node-app) <-- local GUI
+- [Website](#website) <-- easiest
 
 These three alternatives do not depend on each other. You can pick and use the one you like the most.
 
