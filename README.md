@@ -88,6 +88,12 @@ Copy `wasm_exec.js`
 cp $(go env GOROOT)/lib/wasm/wasm_exec.js ./app/wasm_exec.js
 ```
 
+Install express.js
+
+```sh
+npm install express
+```
+
 Start the node server
 
 ```sh
