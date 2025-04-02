@@ -16,6 +16,23 @@
         #hrow {
             border-bottom: 1pt solid black;
         }
+
+        #inputarea {
+            width: 20vw;
+            height: 12vh;
+        }
+
+        .title > h1,h3 {
+            margin: 0;
+        }
+
+        .description > #first {
+            margin-bottom: 0;
+        }
+
+        .description > #last {
+            margin-top: 0;
+        }
     </style>
     <script src="wasm_exec.js"></script>
     <script src="load.js"></script>
@@ -24,14 +41,22 @@
 </head>
 <body>
     <div>
-        <h1>HTTP/2 Frame decoder</h1>
-        <p>//TODO description</p>
+        <div class="title">
+            <h1>HTTP/2 Frame decoder</h1>
+            <h3>by <a href="https://github.com/monrax">monrax</a></h3>
+        </div>
+        <div class="description">
+            <p id="first">Decode hex byte array to HTTP/2 Frames.</p>
+            <p id="last">Inspired by Salim Gasmi's <a href="https://hpd.gasmi.net/">HPD</a></p>
+        </div>
     </div>
     <div>
-        <textarea id="inputarea" style="width: 30em; height: 5em;">00 00 04 00 00 00 01 02 03 be be ca fe</textarea>
+        <textarea id="inputarea">00 00 04 00 00 00 01 02 03 be be ca fe</textarea>
     </div>
-    <div>
+    <br>
+    <div class="button-group">
         <button onclick="handleClickButton()">Decode</button>
+        <button onclick="const input = document.getElementById('inputarea'); input.value=''; input.focus();">Clear</button>
     </div>
     <div id="result"></div>
 </body>
