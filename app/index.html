@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
     <style>
         table {
             border-collapse: collapse;
@@ -24,6 +28,7 @@
 
         .title > h1,h3 {
             margin: 0;
+            color: black;
         }
 
         .description > #first {
@@ -34,6 +39,7 @@
             margin-top: 0;
         }
     </style>
+    <script src="count.js"></script>
     <script src="wasm_exec.js"></script>
     <script src="load.js"></script>
     <script src="decode.js"></script>
@@ -42,12 +48,15 @@
 <body>
     <div>
         <div class="title">
-            <h1>HTTP/2 Frame decoder</h1>
+            <h1><a href="./">HTTP/2 Frame decoder</a></h1>
             <h3>by <a href="https://github.com/monrax">monrax</a></h3>
         </div>
         <div class="description">
             <p id="first">Decode hex byte array to HTTP/2 Frames.</p>
             <p id="last">Inspired by Salim Gasmi's <a href="https://hpd.gasmi.net/">HPD</a></p>
+        </div>
+        <div class="counter">
+            <h4 id="count"></h4>
         </div>
     </div>
     <div>

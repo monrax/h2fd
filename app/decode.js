@@ -8,6 +8,7 @@ const handleClickButton = async () => {
     const nCols = 16;
     const nRows = Math.floor(inHex.length / nCols) + 1;
     const frames = await wasmGetFrames(inHex);
+    countUp();
 
     function makeRow (data, isHeader, headerCount) {
         const row = document.createElement("tr");
@@ -19,7 +20,7 @@ const handleClickButton = async () => {
                 col = document.createElement("th");
                 col.textContent = i.toString();
             } else {
-                col =  document.createElement("td");
+                col = document.createElement("td");
                 col.textContent = ("0" + data[i].toString(16)).slice(-2);;
             }
             row.appendChild(col);

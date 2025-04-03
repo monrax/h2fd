@@ -24,3 +24,6 @@ go.work.sum
 # WASM file
 *.wasm
 wasm_exec.js
+
+# txt file
+*.txt
